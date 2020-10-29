@@ -75,28 +75,28 @@
                             {% for src_basename, tgt_basename, src, tgt, pps, ada, vq, au in rows%}
                             <tr>
                                 <td>{{ src_basename }}
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ src }}">
                                     </audio>
                                 </td>
                                 <td>{{ tgt_basename }}
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ tgt }}">
                                     </audio>
                                 </td>
                                 <td>Proposed
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ pps }}">
                                     </audio> AdaIN-VC
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ ada }}">
                                     </audio>
                                 </td>
                                 <td>VQVC+
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ vq }}">
                                     </audio> AutoVC
-                                    <audio controls>
+                                    <audio controls preload="none">
                                         <source src="{{ au }}">
                                     </audio>
                                 </td>
