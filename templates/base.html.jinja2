@@ -70,6 +70,7 @@
                         obtains the best performance regardless of the subjective or objective evaluations.
                     </p>
                 </div>
+                <hr>
                 <div class="post-preview">
                     <h2 class="post-title">
                         Code
@@ -96,7 +97,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for src_basename, tgt_basename, src, tgt, pps, ada, vq, au in rows%}
+                            {% for src_basename, tgt_basename, src, tgt, pps, ada, vq, au in oneshot_rows%}
                             <tr>
                                 <td>{{ src_basename }}
                                     <audio controls preload="none">
@@ -134,6 +135,36 @@
                     <h2 class="post-title">
                         For fun
                     </h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Source</th>
+                                <th scope="col">Target</th>
+                                <th scope="col">Conversion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for src_basename, tgt_basename, src, tgt, pps in forfun_rows%}
+                            <tr>
+                                <td>{{ src_basename }}
+                                    <audio controls preload="none">
+                                        <source src="{{ src }}">
+                                    </audio>
+                                </td>
+                                <td>{{ tgt_basename }}
+                                    <audio controls preload="none">
+                                        <source src="{{ tgt }}">
+                                    </audio>
+                                </td>
+                                <td>Proposed
+                                    <audio controls preload="none">
+                                        <source src="{{ pps }}">
+                                    </audio>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
                 <hr>
             </div>
